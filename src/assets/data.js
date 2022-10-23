@@ -1,3 +1,4 @@
+import Mock from "mockjs";
 const navList = [
   {
     icon: "house",
@@ -52,4 +53,83 @@ const navList = [
     ],
   },
 ];
-export { navList };
+
+Mock.Random.extend({
+  category: function () {
+    const data = ["Web", "后端", "随笔", "摄影"];
+    return this.pick(data);
+  },
+  tag: function () {
+    const data = [
+      {
+        value: "Java",
+        href: "/",
+      },
+      {
+        value: "JavaScript",
+        href: "/",
+      },
+      {
+        value: "CSS",
+        href: "/",
+      },
+      {
+        value: "HTML",
+        href: "/",
+      },
+      {
+        value: "vue",
+        href: "/",
+      },
+      {
+        value: "react",
+        href: "/",
+      },
+      {
+        value: "小程序",
+        href: "/",
+      },
+    ];
+    return this.pick(data);
+  },
+  timestamp: function () {
+    return new Date(Mock.mock("@datetime")).valueOf();
+  },
+  img: function () {
+    return "https://placekitten.com/200";
+  },
+});
+
+const articleList = Mock.mock({
+  "array|10": [
+    {
+      title: "@title",
+      createTime: "@timestamp",
+      "tags|1-4": ["@tag"],
+      category: "@category",
+      desc: "@paragraph",
+      href: "@url",
+      img: "@img",
+    },
+  ],
+}).array;
+
+const statisticInfo = [
+  {
+    name: "文章",
+    value: 107,
+    href: "/",
+  },
+  {
+    name: "标签",
+    value: 19,
+    href: "/",
+  },
+  {
+    name: "分类",
+    value: 10,
+    href: "/",
+  },
+];
+
+export { navList, articleList, statisticInfo };

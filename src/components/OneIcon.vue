@@ -1,5 +1,5 @@
 <template>
-  <el-icon>
+  <el-icon class="one-icon">
     <component :is="is" />
   </el-icon>
 </template>
@@ -11,3 +11,8 @@ export default {
   },
 };
 </script>
+<style>
+.one-icon {
+  vertical-align: text-bottom;
+}
+</style>

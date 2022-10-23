@@ -4,6 +4,7 @@ import router from "./router";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import "./assets/index.less";
+import "./assets/animation.less";
 
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 

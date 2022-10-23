@@ -69,7 +69,7 @@ export default {
 .one-header {
   height: 400px;
   width: 100%;
-  min-width: 100px;
+  min-width: 1000px;
   background-image: url("https://placekitten.com/1920/400");
 }
 .margin-horizontail-5 {
